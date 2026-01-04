@@ -14,4 +14,7 @@
   animation: marquee 30s linear infinite;
 }
 
-/* hover pause disabled */
+
+.animate-marquee:hover {
+    animation-play-state: paused;
+}

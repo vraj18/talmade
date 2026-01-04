@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Hero } from '../components/Hero';
 import { ClientsMarquee } from '../components/ClientsMarquee';
 import { Services } from '../components/Services';
-import { StatsSection } from '../components/StatsSection';
 import { Impact } from '../components/Impact';
 import { ProcessSection } from '../components/ProcessSection';
 import { Testimonials } from '../components/Testimonials';
@@ -28,7 +27,6 @@ export function Home() {
             <Hero />
             <ClientsMarquee />
             <Services />
-            <StatsSection />
             <Impact />
             <ProcessSection />
             <Testimonials />

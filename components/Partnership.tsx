@@ -1,8 +1,15 @@
 import React from 'react';
 import { RevealOnScroll } from './ui/RevealOnScroll';
-import { Check, ArrowUpRight } from 'lucide-react';
+import { Check, ArrowUpRight, GraduationCap, Briefcase, Award, Target, FileText } from 'lucide-react';
 
 export const Partnership: React.FC = () => {
+    // Function to open brochure in new tab
+    const openBrochure = () => {
+        // Make sure the path is correct relative to your public folder or assets
+        const brochurePath = '/assets/brochure.pdf';
+        window.open(brochurePath, '_blank', 'noopener,noreferrer');
+    };
+
     return (
         <section id="about" className="py-24 bg-white">
             <div className="container mx-auto px-6 md:px-12">
@@ -14,7 +21,7 @@ export const Partnership: React.FC = () => {
                             Talmade Apparels Private Limited
                         </h2>
                         <h3 className="text-xl text-gray-800 font-medium mb-4">
-                            Founded on 6th July 2011 by Mr. Vijay Kumar Gupta and Mr. Tejas Sarvaiya
+                            Founded on 9th July 2024 by Mr. Vijay Kumar Gupta and Mr. Tejas Sarvaiya
                         </h3>
                     </RevealOnScroll>
                     <RevealOnScroll delay={200} className="max-w-md md:mt-12">
@@ -46,12 +53,18 @@ export const Partnership: React.FC = () => {
                                     <p className="text-gray-700 leading-relaxed text-lg">{item}</p>
                                 </div>
                             ))}
-                        </div>
-
-                        <div className="mt-10">
-                            <a href="#contact" className="text-black font-bold border-b-2 border-black pb-1 hover:text-gray-600 hover:border-gray-600 transition-all inline-flex items-center gap-2">
-                                Get in Touch <ArrowUpRight className="w-4 h-4" />
-                            </a>
+                            
+                            {/* Brochure Download Button */}
+                            <div className="pt-4">
+                                <button
+                                    onClick={openBrochure}
+                                    className="inline-flex items-center gap-3 bg-black text-white hover:bg-gray-800 font-medium py-3 px-6 rounded-lg transition-colors duration-200 group"
+                                >
+                                    <FileText className="w-5 h-5" />
+                                    <span>View Our Company Brochure</span>
+                                    <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                                </button>
+                            </div>
                         </div>
                     </RevealOnScroll>
                 </div>
@@ -75,7 +88,7 @@ export const Partnership: React.FC = () => {
                     <RevealOnScroll delay={200}>
                         <span className="text-xs font-bold tracking-widest text-gray-500 uppercase block mb-6">Founders</span>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                            {/* Founder 1 - Let image determine height */}
+                            {/* Founder 1 - Mr. Vijay Kumar Gupta */}
                             <div className="group relative w-full">
                                 {/* Image container that follows original dimensions */}
                                 <div className="relative w-full overflow-hidden rounded-lg shadow-md">
@@ -93,16 +106,52 @@ export const Partnership: React.FC = () => {
                                     <div className="absolute inset-0 flex items-center justify-center p-6">
                                         <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 max-w-md shadow-xl pointer-events-auto">
                                             <h3 className="text-xl font-semibold mb-2">Mr. Vijay Kumar Gupta</h3>
-                                            <p className="text-gray-600 mb-3">Co-Founder & Manufacturing Head</p>
-                                            <p className="text-gray-700 text-sm leading-relaxed">
-                                                A seasoned entrepreneur with deep expertise in garment manufacturing and quality control. Vijay drives the company's commitment to excellence and strong supplier relationships.
+                                            <p className="text-gray-600 mb-4">Founder & Chief Executive Officer</p>
+                                            
+                                            <div className="space-y-4 mb-4">
+                                                {/* Educational Qualification */}
+                                                <div className="flex items-start gap-3">
+                                                    <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                        <GraduationCap className="w-3.5 h-3.5 text-gray-600" />
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="font-medium text-gray-900 text-sm">Education</h4>
+                                                        <p className="text-xs text-gray-600">B.Tech in Textile Engineering • Master's in Business Administration (MBA) in Operations</p>
+                                                    </div>
+                                                </div>
+                                                
+                                                {/* Industry Experience */}
+                                                <div className="flex items-start gap-3">
+                                                    <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                        <Briefcase className="w-3.5 h-3.5 text-gray-600" />
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="font-medium text-gray-900 text-sm">Experience</h4>
+                                                        <p className="text-xs text-gray-600">18+ years in textile manufacturing and supply chain management</p>
+                                                    </div>
+                                                </div>
+                                                
+                                                {/* Expertise */}
+                                                <div className="flex items-start gap-3">
+                                                    <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                        <Award className="w-3.5 h-3.5 text-gray-600" />
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="font-medium text-gray-900 text-sm">Expertise</h4>
+                                                        <p className="text-xs text-gray-600">Quality control, fabric sourcing, production optimization, strategic partnerships</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <p className="text-gray-700 text-sm leading-relaxed border-t border-gray-100 pt-4">
+                                                A visionary entrepreneur with deep expertise in garment manufacturing and quality control. Vijay drives the company's commitment to excellence and strong supplier relationships.
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Founder 2 - Same approach */}
+                            {/* Founder 2 - Mr. Tejas Sarvaiya */}
                             <div className="group relative w-full">
                                 {/* Image container that follows original dimensions */}
                                 <div className="relative w-full overflow-hidden rounded-lg shadow-md">
@@ -120,8 +169,44 @@ export const Partnership: React.FC = () => {
                                     <div className="absolute inset-0 flex items-center justify-center p-6">
                                         <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 max-w-md shadow-xl pointer-events-auto">
                                             <h3 className="text-xl font-semibold mb-2">Mr. Tejas Sarvaiya</h3>
-                                            <p className="text-gray-600 mb-3">Co-Founder & Operations Head</p>
-                                            <p className="text-gray-700 text-sm leading-relaxed">
+                                            <p className="text-gray-600 mb-4">Co-founder & Chief Operations Officer</p>
+                                            
+                                            <div className="space-y-4 mb-4">
+                                                {/* Educational Qualification */}
+                                                <div className="flex items-start gap-3">
+                                                    <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                        <GraduationCap className="w-3.5 h-3.5 text-gray-600" />
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="font-medium text-gray-900 text-sm">Education</h4>
+                                                        <p className="text-xs text-gray-600">B.Sc. in Fashion Design • Diploma in Garment Manufacturing Technology</p>
+                                                    </div>
+                                                </div>
+                                                
+                                                {/* Industry Experience */}
+                                                <div className="flex items-start gap-3">
+                                                    <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                        <Briefcase className="w-3.5 h-3.5 text-gray-600" />
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="font-medium text-gray-900 text-sm">Experience</h4>
+                                                        <p className="text-xs text-gray-600">15+ years in apparel design, production management, and operations</p>
+                                                    </div>
+                                                </div>
+                                                
+                                                {/* Expertise */}
+                                                <div className="flex items-start gap-3">
+                                                    <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                        <Target className="w-3.5 h-3.5 text-gray-600" />
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="font-medium text-gray-900 text-sm">Expertise</h4>
+                                                        <p className="text-xs text-gray-600">Product innovation, operational efficiency, client relations, design implementation</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <p className="text-gray-700 text-sm leading-relaxed border-t border-gray-100 pt-4">
                                                 Focused on operations, design and customer experience. Tejas leads product innovation and ensures our services consistently meet client expectations.
                                             </p>
                                         </div>

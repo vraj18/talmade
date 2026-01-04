@@ -167,7 +167,7 @@ export function ClientsPage() {
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Trusted by Industry Leaders</h2>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 md:gap-6">
               {CLIENTS.map((client) => (
                 <PartnerCard key={client.name} item={client} type="client" />
               ))}
@@ -183,7 +183,7 @@ export function ClientsPage() {
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Official Distribution Network</h2>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-4 md:gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 md:gap-6">
               {DEALERS.map((dealer) => (
                 <PartnerCard key={dealer.name} item={dealer} type="dealer" />
               ))}

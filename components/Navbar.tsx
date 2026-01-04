@@ -26,7 +26,6 @@ export function Navbar() {
     { name: 'Products', href: '/#products', hasDropdown: true },
     { name: 'Clients', href: '/clients' },
     { name: 'Testimonials', href: '/#testimonials' },
-    { name: 'Blog', href: '/blog' },
     { name: 'Enquiry', href: '/enquiry' },
     { name: 'Contact Us', href: '/contact-us' },
   ];
