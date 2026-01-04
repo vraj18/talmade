@@ -1,16 +1,36 @@
+// src/data/categories.ts
+
 export const PRODUCT_CATEGORIES = [
-    { id: 'security-uniform', name: 'Security uniform' },
-    { id: 'defence-uniform', name: 'Defence Uniform' },
-    { id: 'corporate-uniform', name: 'Corporate Uniform' },
-    { id: 'industrial-uniform', name: 'Industrial uniform' },
-    { id: 'safety-uniform', name: 'Safety Uniform (Boiler suit & safety jacket)' },
-    { id: 'hospitality-uniform', name: 'Hospitality Uniform & linen' },
-    { id: 'hospital-uniform', name: 'Hospital Uniform & linen' },
-    { id: 'winter-wear', name: 'Winter Wear (sweater, Jacket, Jersey, Thermo coats)' },
-    { id: 'ceremonial-dress', name: 'Ceremonial dress' },
-    { id: 'sportswear', name: 'Sportswear ( Trousers & T-Shirts, Track Suits)' },
-    { id: 'beret-cap', name: 'Beret Cap, commando Cap, Peak Cap etc.' },
-    { id: 'accessories', name: 'Belts, Badges, Shoulder Titles, Lanyards' },
-    { id: 'waving-logo', name: 'All type of waving & Digital logo' },
-    { id: 'metal-accessories', name: 'All Type of Stick, Metal accessories' },
+    { 
+      id: 'Corporate', 
+      name: 'Corporate Uniform' 
+    },
+    { 
+      id: 'Security', 
+      name: 'Security Uniform'  // Changed from 'security' to 'Security' to match folder
+    },
+    { 
+      id: 'Hospital', 
+      name: 'Hospital Uniform' 
+    },
+    { 
+      id: 'Airline', 
+      name: 'Airline Uniform' 
+    },
+    { 
+      id: 'Saree', 
+      name: 'Sarees' 
+    },
+    { 
+      id: 'Tshirt', 
+      name: 'T-Shirts' 
+    },
+    { 
+      id: 'Work', 
+      name: 'Industrial & Work Uniform' 
+    },
+    { 
+      id: 'Hotel', 
+      name: 'Hospitality Uniform & Linen' 
+    },
 ];

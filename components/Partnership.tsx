@@ -21,7 +21,7 @@ export const Partnership: React.FC = () => {
                             Talmade Apparels Private Limited
                         </h2>
                         <h3 className="text-xl text-gray-800 font-medium mb-4">
-                            Founded on 9th July 2024 by Mr. Vijay Kumar Gupta and Mr. Tejas Sarvaiya
+                            Founded on 6 July 2011 by Mr. Vijay Kumar Gupta under the name Gupta Silk Mills, the company was subsequently rebranded as Talmade Apparels on 9 July 2024.
                         </h3>
                     </RevealOnScroll>
                     <RevealOnScroll delay={200} className="max-w-md md:mt-12">

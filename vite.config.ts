@@ -18,6 +18,18 @@ export default defineConfig(({ mode }) => {
         alias: {
           '@': path.resolve(__dirname, '.'),
         }
-      }
+      },
+      build: {
+        outDir: 'dist',
+        rollupOptions: {
+          input: {
+            main: './index.html',
+          },
+          // Externalize CDN dependencies so they're not bundled
+          external: ['react', 'react-dom', 'react/jsx-runtime'],
+        },
+      },
+      // Important for SPA routing
+      base: './',
     };
 });

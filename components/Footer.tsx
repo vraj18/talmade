@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
                 <h4 className="font-bold text-lg mb-6">Resources</h4>
                 <ul className="space-y-4 text-gray-400 text-sm">
                     <li><a href="#" className="hover:text-white transition-colors">Fabric Guide</a></li>
-                    <li><a href="#" className="hover:text-white transition-colors">Sizing Chart</a></li>
+                    <li><Link to="/sizing-chart" className="hover:text-white transition-colors">Sizing Chart</Link></li>
                     <li><a href="#" className="hover:text-white transition-colors">Case Studies</a></li>
                     <li><a href="#" className="hover:text-white transition-colors">FAQ</a></li>
                 </ul>
@@ -70,10 +70,10 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 pt-8 border-t border-gray-900">
             <p>&copy; {currentYear} Talmade Uniforms. All rights reserved.</p>
             <div className="flex gap-4 mt-4 md:mt-0">
-                <a href="#" className="hover:text-gray-400">Privacy Policy</a>
-                <a href="#" className="hover:text-gray-400">Terms & Conditions</a>
+                <Link to="/privacy" className="hover:text-gray-400">Privacy Policy</Link>
+                <Link to="/terms" className="hover:text-gray-400">Terms & Conditions</Link>
             </div>
-        </div>
+        </div> 
       </div>
     </footer>
   );

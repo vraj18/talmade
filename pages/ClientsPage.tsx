@@ -39,6 +39,29 @@ import client34 from "../assets/clients/client34.png";
 import client35 from "../assets/clients/client35.png";
 import client36 from "../assets/clients/client36.png";
 import client37 from "../assets/clients/client37.png";
+import client38 from "../assets/clients/client38.png";
+import client39 from "../assets/clients/client39.png";
+import client40 from "../assets/clients/client40.png";
+import client41 from "../assets/clients/client41.png";
+import client42 from "../assets/clients/client42.png";
+import client43 from "../assets/clients/client43.png";
+import client44 from "../assets/clients/client44.jpeg";
+import client45 from "../assets/clients/client45.png";
+import client46 from "../assets/clients/client46.png";
+import client47 from "../assets/clients/client47.png";
+import client48 from "../assets/clients/client48.png";
+import client49 from "../assets/clients/client49.svg";
+import client50 from "../assets/clients/client50.jpg";
+import client51 from "../assets/clients/client51.png";
+import client52 from "../assets/clients/client52.png";
+import client53 from "../assets/clients/client53.png";
+import client54 from "../assets/clients/client54.png";
+import client55 from "../assets/clients/client55.png";
+import client56 from "../assets/clients/client56.png";
+import client57 from "../assets/clients/client57.png";
+import client58 from "../assets/clients/client58.png";
+import client59 from "../assets/clients/client59.png";
+
 import dealer1 from "../assets/dealers/dealer1.png";
 import dealer2 from "../assets/dealers/dealer2.png";
 import dealer3 from "../assets/dealers/dealer3.png";
@@ -90,6 +113,28 @@ const CLIENTS = [
   { name: "client35", logo: client35 },
   { name: "client36", logo: client36 },
   { name: "client37", logo: client37 },
+  { name: "client38", logo: client38 },
+  { name: "client39", logo: client39 },
+  { name: "client40", logo: client40 },
+  { name: "client41", logo: client41 },
+  { name: "client42", logo: client42 },
+  { name: "client43", logo: client43 },
+  { name: "client44", logo: client44 },
+  { name: "client45", logo: client45 },
+  { name: "client46", logo: client46 },
+  { name: "client47", logo: client47 },
+  { name: "client48", logo: client48 },
+  { name: "client49", logo: client49 },
+  { name: "client50", logo: client50 },
+  { name: "client51", logo: client51 },
+  { name: "client52", logo: client52 },
+  { name: "client53", logo: client53 },
+  { name: "client54", logo: client54 },
+  { name: "client55", logo: client55 },
+  { name: "client56", logo: client56 },
+  { name: "client57", logo: client57 },
+  { name: "client58", logo: client58 },
+  { name: "client59", logo: client59 },
 ];
 
 const DEALERS = [
