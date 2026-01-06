@@ -2,6 +2,12 @@ import React from 'react';
 import { RevealOnScroll } from './ui/RevealOnScroll';
 import { Check, ArrowUpRight, GraduationCap, Briefcase, Award, Target, FileText } from 'lucide-react';
 
+// data/images.ts
+export const images = {
+  founder1: new URL('../assets/founder1.jpg', import.meta.url).href,
+  founder2: new URL('../assets/founder2.jpg', import.meta.url).href,
+};
+
 export const Partnership: React.FC = () => {
     // Function to open brochure in new tab
     const openBrochure = () => {
@@ -93,7 +99,7 @@ export const Partnership: React.FC = () => {
                                 {/* Image container that follows original dimensions */}
                                 <div className="relative w-full overflow-hidden rounded-lg shadow-md">
                                     <img 
-                                        src="assets/founder1.jpg" 
+                                        src={images.founder1} 
                                         alt="Vijay Kumar Gupta"
                                         className="w-full h-auto object-contain max-w-full"
                                         style={{ maxHeight: 'none' }}
@@ -156,7 +162,7 @@ export const Partnership: React.FC = () => {
                                 {/* Image container that follows original dimensions */}
                                 <div className="relative w-full overflow-hidden rounded-lg shadow-md">
                                     <img 
-                                        src="assets/founder2.jpg" 
+                                        src={images.founder2} 
                                         alt="Tejas Sarvaiya"
                                         className="w-full h-auto object-contain max-w-full"
                                         style={{ maxHeight: 'none' }}
