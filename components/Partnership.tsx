@@ -93,7 +93,7 @@ export const Partnership: React.FC = () => {
                                 {/* Image container that follows original dimensions */}
                                 <div className="relative w-full overflow-hidden rounded-lg shadow-md">
                                     <img 
-                                        src="/assets/founder1.jpg" 
+                                        src="assets/founder1.jpg" 
                                         alt="Vijay Kumar Gupta"
                                         className="w-full h-auto object-contain max-w-full"
                                         style={{ maxHeight: 'none' }}
@@ -156,7 +156,7 @@ export const Partnership: React.FC = () => {
                                 {/* Image container that follows original dimensions */}
                                 <div className="relative w-full overflow-hidden rounded-lg shadow-md">
                                     <img 
-                                        src="/assets/founder2.jpg" 
+                                        src="assets/founder2.jpg" 
                                         alt="Tejas Sarvaiya"
                                         className="w-full h-auto object-contain max-w-full"
                                         style={{ maxHeight: 'none' }}
