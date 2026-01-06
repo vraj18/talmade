@@ -6,13 +6,14 @@ import { Check, ArrowUpRight, GraduationCap, Briefcase, Award, Target, FileText 
 export const images = {
   founder1: new URL('../assets/founder1.jpg', import.meta.url).href,
   founder2: new URL('../assets/founder2.jpg', import.meta.url).href,
+  brochure: new URL('../assets/brochure.pdf', import.meta.url).href,
 };
 
 export const Partnership: React.FC = () => {
     // Function to open brochure in new tab
     const openBrochure = () => {
         // Make sure the path is correct relative to your public folder or assets
-        const brochurePath = '/assets/brochure.pdf';
+        const brochurePath = images.brochure;
         window.open(brochurePath, '_blank', 'noopener,noreferrer');
     };
 

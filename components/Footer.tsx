@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, Instagram, Linkedin, Twitter, Facebook } from 'lucide-react';
 
+import footerLogo from '../assets/footer_logo.png';
+
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
@@ -21,20 +23,29 @@ export const Footer: React.FC = () => {
                 <h4 className="font-bold text-lg mb-6">Quick Access</h4>
                 <ul className="space-y-4 text-gray-400 text-sm">
                     <li><Link to="/about" className="hover:text-white transition-colors">About</Link></li>
-                    <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
+                    <li><a href="#testimonials" className="hover:text-white transition-colors">Testimonials</a></li>
                     <li><a href="#process" className="hover:text-white transition-colors">Process</a></li>
                     <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
                 </ul>
             </div>
 
             <div>
-                <h4 className="font-bold text-lg mb-6">Resources</h4>
+                <h4 className="font-bold text-lg mb-6">Customer Support</h4>
                 <ul className="space-y-4 text-gray-400 text-sm">
-                    <li><a href="#" className="hover:text-white transition-colors">Fabric Guide</a></li>
-                    <li><Link to="/sizing-chart" className="hover:text-white transition-colors">Sizing Chart</Link></li>
-                    <li><a href="#" className="hover:text-white transition-colors">Case Studies</a></li>
-                    <li><a href="#" className="hover:text-white transition-colors">FAQ</a></li>
+                    <li className="mb-8">
+                        <a href="mailto:info.talmade@gmail.com" className="hover:text-white transition-colors">
+                            info.talmade@gmail.com
+                        </a>
+                    </li>
                 </ul>
+                {/* Logo placed outside the list with proper spacing */}
+                <div className="mt-12">
+                    <img 
+                        src={footerLogo} 
+                        alt="Footer Logo" 
+                        className="w-40 h-auto opacity-90 hover:opacity-100 transition-opacity duration-300" 
+                    />
+                </div>
             </div>
 
             <div>
