@@ -22,10 +22,10 @@ export const Footer: React.FC = () => {
             <div>
                 <h4 className="font-bold text-lg mb-6">Quick Access</h4>
                 <ul className="space-y-4 text-gray-400 text-sm">
-                    <li><Link to="/about" className="hover:text-white transition-colors">About</Link></li>
-                    <li><a href="#testimonials" className="hover:text-white transition-colors">Testimonials</a></li>
-                    <li><a href="#process" className="hover:text-white transition-colors">Process</a></li>
-                    <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+                    <li><Link to="/sizing-chart" className="hover:text-white transition-colors">Size Chart</Link></li>
+                    <li><Link to="/#testimonials" className="hover:text-white transition-colors">Testimonials</Link></li>
+                    <li><Link to="/#process" className="hover:text-white transition-colors">Process</Link></li>
+                    <li><Link to="/#contact" className="hover:text-white transition-colors">Contact</Link></li>
                 </ul>
             </div>
 

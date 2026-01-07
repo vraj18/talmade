@@ -20,6 +20,8 @@ export const CategoryPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [folderExists, setFolderExists] = useState(true);
 
+  
+
   useEffect(() => {
     const loadProducts = () => {
       setLoading(true);
@@ -195,16 +197,16 @@ export const CategoryPage: React.FC = () => {
                     className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200 hover:border-gray-300"
                   >
                     {/* Image Container - Taller aspect ratio */}
-                    <div className="relative overflow-hidden">
-                      <div className="aspect-[3/4] overflow-hidden">
+                    <div className="relative overflow-hidden bg-white">
+                      <div className="aspect-[3/4] flex items-center justify-center">
                         <img
                           src={product.image}
                           alt={product.name}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          className="max-w-full max-h-full object-contain transition-transform duration-400 group-hover:scale-105"
                           onError={(e) => {
                             console.error(`Failed to load: ${product.fileName}`);
                             e.currentTarget.src = `https://placehold.co/600x900/f3f4f6/9ca3af?text=${encodeURIComponent(category.name)}`;
-                            e.currentTarget.className = "w-full h-full object-contain p-8";
+                            e.currentTarget.className = "max-w-full max-h-full object-contain";
                           }}
                           loading="lazy"
                         />
@@ -223,6 +225,7 @@ export const CategoryPage: React.FC = () => {
                     </h3>
                     <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mb-6"></div>
                     <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">
+                
                       Our {category.name.toLowerCase()} collection combines superior craftsmanship with premium materials 
                       to deliver exceptional quality and timeless style. Each piece is designed for both 
                       aesthetic appeal and practical functionality.
@@ -265,6 +268,8 @@ export const CategoryPage: React.FC = () => {
               </div>
             </>
           )}
+          {/* Lightbox Modal */}
+          
         </div>
       </div>
     </div>

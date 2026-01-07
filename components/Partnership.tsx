@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { RevealOnScroll } from './ui/RevealOnScroll';
-import { Check, ArrowUpRight, GraduationCap, Briefcase, Award, Target, FileText } from 'lucide-react';
+import { Check, ArrowUpRight, GraduationCap, Briefcase, FileText, ChevronDown } from 'lucide-react';
 
 // data/images.ts
 export const images = {
@@ -10,17 +10,40 @@ export const images = {
 };
 
 export const Partnership: React.FC = () => {
-    // Function to open brochure in new tab
+    const [openFaq, setOpenFaq] = useState<number | null>(null);
+    
     const openBrochure = () => {
-        // Make sure the path is correct relative to your public folder or assets
         const brochurePath = images.brochure;
         window.open(brochurePath, '_blank', 'noopener,noreferrer');
+    };
+
+    const faqs = [
+        {
+            question: 'What kind of machinery does Talmade use to manufacture uniforms?',
+            answer: `Talmade operates a modern manufacturing facility equipped with advanced, industry-grade machinery to ensure precision, efficiency, and consistent quality. Our infrastructure includes high-speed, fully lubricated sewing machines that enhance productivity while maintaining uniform stitch accuracy at scale. Automated cutting machines are used to precisely cut fabrics and materials, significantly reducing wastage and ensuring uniform sizing. We also utilize computerized embroidery machines to deliver consistent stitch quality and maintain brand standards across large orders. Computer-Aided Design (CAD) technology supports our design and development process by enabling accurate visualization, fit analysis, and refinement of uniform designs before production.`
+        },
+        {
+            question: 'Can Talmade customize uniforms with logos and branding?',
+            answer: `Yes, Talmade specializes in fully customized uniforms tailored to reflect each client's brand identity. We offer logo placement, brand names, and custom design elements using advanced techniques such as computerized embroidery, screen printing, heat transfer, and digital printing. Our digital printing solutions ensure high-resolution output and long-lasting clarity of designs. During the customization process, we carefully evaluate the fabric type, design complexity, placement requirements, and order quantity to deliver uniforms that align perfectly with the institution's branding and functional needs.`
+        },
+        {
+            question: 'How does Talmade ensure the quality of its uniforms?',
+            answer: `Quality is a core priority at Talmade. We source premium-grade fabrics selected for durability, comfort, and performance. Comprehensive quality control checks are conducted at every stage of production—from raw material inspection to final product evaluation. Our skilled workforce adheres strictly to approved design specifications and measurements, ensuring consistency across all uniforms. By combining experienced craftsmanship with advanced machinery and reliable material suppliers, Talmade consistently delivers uniforms that meet high standards of quality, fit, and finish.`
+        },
+        {
+            question: 'How long does it take for Talmade to manufacture and deliver uniforms?',
+            answer: `For standard orders, the manufacturing and delivery timeline typically ranges between 15 to 30 days, depending on the design complexity, measurements, and order quantity. Customized uniforms may require additional time due to design approvals and specific branding requirements. Clear communication and timely approvals help streamline the process. Where required, Talmade can also offer expedited production options to reduce turnaround time and ensure timely delivery.`
+        }
+    ];
+
+    const toggleFaq = (index: number) => {
+        setOpenFaq(openFaq === index ? null : index);
     };
 
     return (
         <section id="about" className="py-24 bg-white">
             <div className="container mx-auto px-6 md:px-12">
-                {/* MAIN SECTION - KEEPING AS IS */}
+                {/* Main Content (unchanged) */}
                 <div className="flex flex-col md:flex-row justify-between items-start mb-16 gap-10">
                     <RevealOnScroll className="max-w-3xl">
                         <span className="text-xs font-bold tracking-widest text-gray-500 uppercase block mb-4">About Us</span>
@@ -61,7 +84,6 @@ export const Partnership: React.FC = () => {
                                 </div>
                             ))}
                             
-                            {/* Brochure Download Button */}
                             <div className="pt-4">
                                 <button
                                     onClick={openBrochure}
@@ -76,7 +98,7 @@ export const Partnership: React.FC = () => {
                     </RevealOnScroll>
                 </div>
 
-                {/* MISSION & VISION SECTION */}
+                {/* Mission & Vision Section (unchanged) */}
                 <div className="mt-16 space-y-12">
                     <RevealOnScroll>
                         <span className="text-xs font-bold tracking-widest text-gray-500 uppercase block mb-4">Mission & Vision</span>
@@ -91,13 +113,11 @@ export const Partnership: React.FC = () => {
                         </p>
                     </RevealOnScroll>
 
-                    {/* FOUNDERS SECTION - Using original image dimensions */}
+                    {/* Founders Section (unchanged) */}
                     <RevealOnScroll delay={200}>
                         <span className="text-xs font-bold tracking-widest text-gray-500 uppercase block mb-6">Founders</span>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                            {/* Founder 1 - Mr. Vijay Kumar Gupta */}
                             <div className="group relative w-full">
-                                {/* Image container that follows original dimensions */}
                                 <div className="relative w-full overflow-hidden rounded-lg shadow-md">
                                     <img 
                                         src={images.founder1} 
@@ -106,50 +126,34 @@ export const Partnership: React.FC = () => {
                                         style={{ maxHeight: 'none' }}
                                     />
                                 </div>
-                                
-                                {/* Hover info - positioned absolutely but relative to the image height */}
                                 <div className="absolute inset-0 opacity-0 transition-all duration-500 group-hover:opacity-100 pointer-events-none">
                                     <div className="absolute inset-0 bg-black/40 rounded-lg"></div>
                                     <div className="absolute inset-0 flex items-center justify-center p-6">
                                         <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 max-w-md shadow-xl pointer-events-auto">
                                             <h3 className="text-xl font-semibold mb-2">Mr. Vijay Kumar Gupta</h3>
                                             <p className="text-gray-600 mb-4">Founder & Chief Executive Officer</p>
-                                            
                                             <div className="space-y-4 mb-4">
-                                                {/* Educational Qualification */}
                                                 <div className="flex items-start gap-3">
                                                     <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                                                         <GraduationCap className="w-3.5 h-3.5 text-gray-600" />
                                                     </div>
                                                     <div>
                                                         <h4 className="font-medium text-gray-900 text-sm">Education</h4>
-                                                        <p className="text-xs text-gray-600">B.Tech in Textile Engineering • Master's in Business Administration (MBA) in Operations</p>
+                                                        <p className="text-xs text-gray-600">B.Tech, M.Tech, LLB</p>
+                                                        <p className="text-xs text-gray-600">JRF BARC(scientist) - 1 year</p>
                                                     </div>
                                                 </div>
-                                                
-                                                {/* Industry Experience */}
                                                 <div className="flex items-start gap-3">
                                                     <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                                                         <Briefcase className="w-3.5 h-3.5 text-gray-600" />
                                                     </div>
                                                     <div>
                                                         <h4 className="font-medium text-gray-900 text-sm">Experience</h4>
-                                                        <p className="text-xs text-gray-600">18+ years in textile manufacturing and supply chain management</p>
-                                                    </div>
-                                                </div>
-                                                
-                                                {/* Expertise */}
-                                                <div className="flex items-start gap-3">
-                                                    <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                                        <Award className="w-3.5 h-3.5 text-gray-600" />
-                                                    </div>
-                                                    <div>
-                                                        <h4 className="font-medium text-gray-900 text-sm">Expertise</h4>
-                                                        <p className="text-xs text-gray-600">Quality control, fabric sourcing, production optimization, strategic partnerships</p>
+                                                        <p className="text-xs text-gray-600">CTL ENGINEERING INC. - 2.5 years</p>
+                                                        <p className="text-xs text-gray-600">Garmenting Experience - 5 years</p>
                                                     </div>
                                                 </div>
                                             </div>
-                                            
                                             <p className="text-gray-700 text-sm leading-relaxed border-t border-gray-100 pt-4">
                                                 A visionary entrepreneur with deep expertise in garment manufacturing and quality control. Vijay drives the company's commitment to excellence and strong supplier relationships.
                                             </p>
@@ -158,9 +162,7 @@ export const Partnership: React.FC = () => {
                                 </div>
                             </div>
 
-                            {/* Founder 2 - Mr. Tejas Sarvaiya */}
                             <div className="group relative w-full">
-                                {/* Image container that follows original dimensions */}
                                 <div className="relative w-full overflow-hidden rounded-lg shadow-md">
                                     <img 
                                         src={images.founder2} 
@@ -169,50 +171,32 @@ export const Partnership: React.FC = () => {
                                         style={{ maxHeight: 'none' }}
                                     />
                                 </div>
-                                
-                                {/* Hover info */}
                                 <div className="absolute inset-0 opacity-0 transition-all duration-500 group-hover:opacity-100 pointer-events-none">
                                     <div className="absolute inset-0 bg-black/40 rounded-lg"></div>
                                     <div className="absolute inset-0 flex items-center justify-center p-6">
                                         <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 max-w-md shadow-xl pointer-events-auto">
                                             <h3 className="text-xl font-semibold mb-2">Mr. Tejas Sarvaiya</h3>
                                             <p className="text-gray-600 mb-4">Co-founder & Chief Operations Officer</p>
-                                            
                                             <div className="space-y-4 mb-4">
-                                                {/* Educational Qualification */}
                                                 <div className="flex items-start gap-3">
                                                     <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                                                         <GraduationCap className="w-3.5 h-3.5 text-gray-600" />
                                                     </div>
                                                     <div>
                                                         <h4 className="font-medium text-gray-900 text-sm">Education</h4>
-                                                        <p className="text-xs text-gray-600">B.Sc. in Fashion Design • Diploma in Garment Manufacturing Technology</p>
+                                                        <p className="text-xs text-gray-600">Masters in Tailoring & Designing</p>
                                                     </div>
                                                 </div>
-                                                
-                                                {/* Industry Experience */}
                                                 <div className="flex items-start gap-3">
                                                     <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                                                         <Briefcase className="w-3.5 h-3.5 text-gray-600" />
                                                     </div>
                                                     <div>
                                                         <h4 className="font-medium text-gray-900 text-sm">Experience</h4>
-                                                        <p className="text-xs text-gray-600">15+ years in apparel design, production management, and operations</p>
-                                                    </div>
-                                                </div>
-                                                
-                                                {/* Expertise */}
-                                                <div className="flex items-start gap-3">
-                                                    <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                                        <Target className="w-3.5 h-3.5 text-gray-600" />
-                                                    </div>
-                                                    <div>
-                                                        <h4 className="font-medium text-gray-900 text-sm">Expertise</h4>
-                                                        <p className="text-xs text-gray-600">Product innovation, operational efficiency, client relations, design implementation</p>
+                                                        <p className="text-xs text-gray-600">Masters in Tailoring & Designing - 8 years</p>
                                                     </div>
                                                 </div>
                                             </div>
-                                            
                                             <p className="text-gray-700 text-sm leading-relaxed border-t border-gray-100 pt-4">
                                                 Focused on operations, design and customer experience. Tejas leads product innovation and ensures our services consistently meet client expectations.
                                             </p>
@@ -220,6 +204,48 @@ export const Partnership: React.FC = () => {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </RevealOnScroll>
+                </div>
+
+                {/* Simplified FAQ Section */}
+                <div className="mt-20">
+                    <RevealOnScroll>
+                        <h2 className="text-3xl font-bold mb-10">Frequently Asked Questions</h2>
+                        <div className="space-y-4">
+                            {faqs.map((faq, index) => (
+                                <div 
+                                    key={index}
+                                    className={`bg-white rounded-xl border transition-all duration-300 ${
+                                        openFaq === index 
+                                            ? 'border-gray-300 shadow-md' 
+                                            : 'border-gray-100 hover:border-gray-300 hover:shadow-sm'
+                                    }`}
+                                >
+                                    <button
+                                        onClick={() => toggleFaq(index)}
+                                        className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:rounded-xl"
+                                    >
+                                        <span className="font-semibold text-gray-900 text-lg pr-4">{faq.question}</span>
+                                        <ChevronDown className={`w-5 h-5 text-gray-500 flex-shrink-0 transition-transform duration-300 ${
+                                            openFaq === index ? 'rotate-180' : ''
+                                        }`} />
+                                    </button>
+                                    <div 
+                                        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                                            openFaq === index ? 'max-h-[1000px]' : 'max-h-0'
+                                        }`}
+                                    >
+                                        <div className="px-6 pb-6 pt-2">
+                                            <div className="border-l-2 border-gray-300 pl-6">
+                                                <p className="text-gray-700 leading-relaxed">
+                                                    {faq.answer}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </RevealOnScroll>
                 </div>

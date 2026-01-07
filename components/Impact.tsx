@@ -1,6 +1,6 @@
 import React from 'react';
 import { RevealOnScroll } from './ui/RevealOnScroll';
-import { Lightbulb, Users, Target, BarChart } from 'lucide-react';
+import { Lightbulb, Users, Target, BarChart, Scissors, Factory, PenTool, Package, CheckCircle } from 'lucide-react';
 
 export const Impact: React.FC = () => {
   return (
@@ -18,15 +18,14 @@ export const Impact: React.FC = () => {
           </RevealOnScroll>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8 items-stretch h-full">
+            <div className="flex flex-col lg:flex-row gap-8 items-stretch h-full">
             {/* Steps List */}
-            <div className="flex-1 flex flex-col justify-center gap-12 lg:pr-12">
+            <div className="flex-1 flex flex-col justify-center gap-6 lg:pr-12 h-[600px]">
                 <RevealOnScroll delay={100}>
                     <div className="flex gap-6 group">
                         <Lightbulb className="w-8 h-8 text-gray-500 group-hover:text-white transition-colors flex-shrink-0" />
                         <div>
-                            <h3 className="text-2xl font-display font-bold mb-2">1. Consultation First</h3>
-                            <p className="text-gray-400 leading-relaxed">We go beyond surface-level requirements to deeply understand your work environment, constraints, and user needs.</p>
+                            <h3 className="text-xl font-display font-bold">1. Consultation First</h3>
                         </div>
                     </div>
                 </RevealOnScroll>
@@ -35,28 +34,52 @@ export const Impact: React.FC = () => {
                     <div className="flex gap-6 group">
                         <Users className="w-8 h-8 text-gray-500 group-hover:text-white transition-colors flex-shrink-0" />
                         <div>
-                            <h3 className="text-2xl font-display font-bold mb-2">2. Collaborative Design</h3>
-                            <p className="text-gray-400 leading-relaxed">We iterate on fabrics and fits with your team. Samples are produced and tested in real-world conditions.</p>
+                            <h3 className="text-xl font-display font-bold">2. Collaborative Design</h3>
                         </div>
                     </div>
                 </RevealOnScroll>
                  <div className="h-px bg-gray-800 w-full" />
                 <RevealOnScroll delay={300}>
                     <div className="flex gap-6 group">
-                        <Target className="w-8 h-8 text-gray-500 group-hover:text-white transition-colors flex-shrink-0" />
+                        <Scissors className="w-8 h-8 text-gray-500 group-hover:text-white transition-colors flex-shrink-0" />
                         <div>
-                            <h3 className="text-2xl font-display font-bold mb-2">3. Flawless Execution</h3>
-                            <p className="text-gray-400 leading-relaxed">Precision manufacturing ensures every stitch is perfect. We handle quality control and packaging.</p>
+                            <h3 className="text-xl font-display font-bold">3. Sampling</h3>
+                        </div>
+                    </div>
+                </RevealOnScroll>
+                 <div className="h-px bg-gray-800 w-full" />
+                <RevealOnScroll delay={350}>
+                    <div className="flex gap-6 group">
+                        <Factory className="w-8 h-8 text-gray-500 group-hover:text-white transition-colors flex-shrink-0" />
+                        <div>
+                            <h3 className="text-xl font-display font-bold">4. Production</h3>
                         </div>
                     </div>
                 </RevealOnScroll>
                  <div className="h-px bg-gray-800 w-full" />
                 <RevealOnScroll delay={400}>
                     <div className="flex gap-6 group">
-                        <BarChart className="w-8 h-8 text-gray-500 group-hover:text-white transition-colors flex-shrink-0" />
+                        <PenTool className="w-8 h-8 text-gray-500 group-hover:text-white transition-colors flex-shrink-0" />
                         <div>
-                            <h3 className="text-2xl font-display font-bold mb-2">4. Supply Chain Evolution</h3>
-                            <p className="text-gray-400 leading-relaxed">We set up re-ordering systems that improve over time, ensuring you never run out of stock.</p>
+                            <h3 className="text-xl font-display font-bold">5. Branding</h3>
+                        </div>
+                    </div>
+                </RevealOnScroll>
+                 <div className="h-px bg-gray-800 w-full" />
+                <RevealOnScroll delay={450}>
+                    <div className="flex gap-6 group">
+                        <Package className="w-8 h-8 text-gray-500 group-hover:text-white transition-colors flex-shrink-0" />
+                        <div>
+                            <h3 className="text-xl font-display font-bold">6. Finishing</h3>
+                        </div>
+                    </div>
+                </RevealOnScroll>
+                 <div className="h-px bg-gray-800 w-full" />
+                <RevealOnScroll delay={500}>
+                    <div className="flex gap-6 group">
+                        <CheckCircle className="w-8 h-8 text-gray-500 group-hover:text-white transition-colors flex-shrink-0" />
+                        <div>
+                            <h3 className="text-xl font-display font-bold">7. Quality Assurance</h3>
                         </div>
                     </div>
                 </RevealOnScroll>
