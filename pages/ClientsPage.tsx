@@ -60,7 +60,7 @@ import client55 from "../assets/clients/client55.png";
 import client56 from "../assets/clients/client56.png";
 import client57 from "../assets/clients/client57.png";
 import client58 from "../assets/clients/client58.png";
-import client59 from "../assets/clients/client59.png";
+
 
 import dealer1 from "../assets/dealers/dealer1.png";
 import dealer2 from "../assets/dealers/dealer2.png";
@@ -134,7 +134,6 @@ const CLIENTS = [
   { name: "client56", logo: client56 },
   { name: "client57", logo: client57 },
   { name: "client58", logo: client58 },
-  { name: "client59", logo: client59 },
 ];
 
 const DEALERS = [
