@@ -3,24 +3,25 @@ import { RevealOnScroll } from './ui/RevealOnScroll';
 
 const testimonials = [
   {
-    name: "Marvin McKinney",
+    name: "Aarav Mehta",
     role: "Procurement Head",
-    quote: "It's been a pleasure collaborating with the team on several initiatives. I confidently recommend them to anyone seeking a skilled agency to plan, design, and execute high-quality uniforms.",
+    quote: "Working with Talmade has been seamless. Their attention to detail and commitment to quality make them our trusted partner for supplying uniforms across multiple branches. I highly recommend them for any organization seeking premium, durable uniforms.",
     image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1000&auto=format&fit=crop"
   },
   {
-    name: "Brooklyn Simmons",
+    name: "Priya Sharma",
     role: "HR Director",
-    quote: "I've worked with the team on multiple engagements and would gladly recommend them to organizations looking to create clear, effective brand experiences delivered with professionalism.",
+    quote: "The Talmade team is professional, responsive, and extremely knowledgeable. From design selection to final delivery, every step was handled efficiently. Our staff uniforms now reflect the brand image perfectly.",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1000&auto=format&fit=crop"
   },
   {
-    name: "Kristin Watson",
+    name: "Rohit Kulkarni",
     role: "Operations Manager",
-    quote: "Their bulk manufacturing capability is unmatched. The delivery was on time, the quality was consistent across 2000 units, and the team was incredibly responsive throughout.",
+    quote: "We ordered uniforms for our industrial and security teams, and Talmade exceeded our expectations. The fabrics are high-quality, stitching is flawless, and delivery was prompt. Truly a reliable partner for large-scale uniform requirements.",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1000&auto=format&fit=crop"
   }
 ];
+
 
 export const Testimonials: React.FC = () => {
   return (
