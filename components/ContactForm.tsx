@@ -29,7 +29,7 @@ export const ContactForm: React.FC = () => {
       e.currentTarget.reset();
     } catch (error) {
       console.error(error);
-    //   alert("Submission failed. Please try again.");
+      //   alert("Submission failed. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -37,7 +37,7 @@ export const ContactForm: React.FC = () => {
 
   const handleCopyEmail = () => {
     navigator.clipboard
-      .writeText("careers@talmade.com")
+      .writeText("info.talmade@gmail.com")
       .then(() => {
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
@@ -115,7 +115,7 @@ export const ContactForm: React.FC = () => {
                   <div className="mb-3">
                     <div className="flex items-center justify-between bg-gray-50 border border-gray-200 rounded-lg p-2.5">
                       <span className="font-medium text-gray-700 text-sm">
-                        careers@talmade.com
+                        info.talmade@gmail.com
                       </span>
                       <button
                         onClick={handleCopyEmail}
