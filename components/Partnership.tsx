@@ -4,14 +4,14 @@ import { Check, ArrowUpRight, GraduationCap, Briefcase, FileText, ChevronDown } 
 
 // data/images.ts
 export const images = {
-  founder1: new URL('../assets/founder1.jpg', import.meta.url).href,
-  founder2: new URL('../assets/founder2.jpg', import.meta.url).href,
-  brochure: new URL('../assets/brochure.pdf', import.meta.url).href,
+    founder1: new URL('../assets/founder1.png', import.meta.url).href,
+    founder2: new URL('../assets/founder2.png', import.meta.url).href,
+    brochure: new URL('../assets/brochure.pdf', import.meta.url).href,
 };
 
 export const Partnership: React.FC = () => {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
-    
+
     const openBrochure = () => {
         const brochurePath = images.brochure;
         window.open(brochurePath, '_blank', 'noopener,noreferrer');
@@ -83,7 +83,7 @@ export const Partnership: React.FC = () => {
                                     <p className="text-gray-700 leading-relaxed text-lg">{item}</p>
                                 </div>
                             ))}
-                            
+
                             <div className="pt-4">
                                 <button
                                     onClick={openBrochure}
@@ -119,8 +119,8 @@ export const Partnership: React.FC = () => {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                             <div className="group relative w-full">
                                 <div className="relative w-full overflow-hidden rounded-lg shadow-md">
-                                    <img 
-                                        src={images.founder1} 
+                                    <img
+                                        src={images.founder1}
                                         alt="Vijay Kumar Gupta"
                                         className="w-full h-auto object-contain max-w-full"
                                         style={{ maxHeight: 'none' }}
@@ -164,8 +164,8 @@ export const Partnership: React.FC = () => {
 
                             <div className="group relative w-full">
                                 <div className="relative w-full overflow-hidden rounded-lg shadow-md">
-                                    <img 
-                                        src={images.founder2} 
+                                    <img
+                                        src={images.founder2}
                                         alt="Tejas Sarvaiya"
                                         className="w-full h-auto object-contain max-w-full"
                                         style={{ maxHeight: 'none' }}
@@ -214,27 +214,24 @@ export const Partnership: React.FC = () => {
                         <h2 className="text-3xl font-bold mb-10">Frequently Asked Questions</h2>
                         <div className="space-y-4">
                             {faqs.map((faq, index) => (
-                                <div 
+                                <div
                                     key={index}
-                                    className={`bg-white rounded-xl border transition-all duration-300 ${
-                                        openFaq === index 
-                                            ? 'border-gray-300 shadow-md' 
+                                    className={`bg-white rounded-xl border transition-all duration-300 ${openFaq === index
+                                            ? 'border-gray-300 shadow-md'
                                             : 'border-gray-100 hover:border-gray-300 hover:shadow-sm'
-                                    }`}
+                                        }`}
                                 >
                                     <button
                                         onClick={() => toggleFaq(index)}
                                         className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:rounded-xl"
                                     >
                                         <span className="font-semibold text-gray-900 text-lg pr-4">{faq.question}</span>
-                                        <ChevronDown className={`w-5 h-5 text-gray-500 flex-shrink-0 transition-transform duration-300 ${
-                                            openFaq === index ? 'rotate-180' : ''
-                                        }`} />
+                                        <ChevronDown className={`w-5 h-5 text-gray-500 flex-shrink-0 transition-transform duration-300 ${openFaq === index ? 'rotate-180' : ''
+                                            }`} />
                                     </button>
-                                    <div 
-                                        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                                            openFaq === index ? 'max-h-[1000px]' : 'max-h-0'
-                                        }`}
+                                    <div
+                                        className={`overflow-hidden transition-all duration-300 ease-in-out ${openFaq === index ? 'max-h-[1000px]' : 'max-h-0'
+                                            }`}
                                     >
                                         <div className="px-6 pb-6 pt-2">
                                             <div className="border-l-2 border-gray-300 pl-6">
