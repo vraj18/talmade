@@ -1,21 +1,17 @@
 import React, { useState } from 'react';
 import { RevealOnScroll } from './ui/RevealOnScroll';
-import { Check, ArrowUpRight, GraduationCap, Briefcase, FileText, ChevronDown } from 'lucide-react';
+import { Check, GraduationCap, Briefcase, ChevronDown } from 'lucide-react';
 
 // data/images.ts
 export const images = {
     founder1: new URL('../assets/founder1.png', import.meta.url).href,
     founder2: new URL('../assets/founder2.png', import.meta.url).href,
-    brochure: new URL('../assets/brochure.pdf', import.meta.url).href,
 };
 
 export const Partnership: React.FC = () => {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-    const openBrochure = () => {
-        const brochurePath = images.brochure;
-        window.open(brochurePath, '_blank', 'noopener,noreferrer');
-    };
+
 
     const faqs = [
         {
@@ -51,7 +47,7 @@ export const Partnership: React.FC = () => {
                             Talmade Apparels Private Limited
                         </h2>
                         <h3 className="text-xl text-gray-800 font-medium mb-4">
-                            Founded on 6 July 2011 by Mr. Vijay Kumar Gupta under the name Gupta Silk Mills, the company was subsequently rebranded as Talmade Apparels on 9 July 2024.
+                            Founded on 6 July 1992 by Mr. Vijay Kumar Gupta under the name Gupta Silk Mills, the company was subsequently rebranded as Talmade Apparels on 9 July 2024.
                         </h3>
                     </RevealOnScroll>
                     <RevealOnScroll delay={200} className="max-w-md md:mt-12">
@@ -84,16 +80,7 @@ export const Partnership: React.FC = () => {
                                 </div>
                             ))}
 
-                            <div className="pt-4">
-                                <button
-                                    onClick={openBrochure}
-                                    className="inline-flex items-center gap-3 bg-black text-white hover:bg-gray-800 font-medium py-3 px-6 rounded-lg transition-colors duration-200 group"
-                                >
-                                    <FileText className="w-5 h-5" />
-                                    <span>View Our Company Brochure</span>
-                                    <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                                </button>
-                            </div>
+
                         </div>
                     </RevealOnScroll>
                 </div>
@@ -217,8 +204,8 @@ export const Partnership: React.FC = () => {
                                 <div
                                     key={index}
                                     className={`bg-white rounded-xl border transition-all duration-300 ${openFaq === index
-                                            ? 'border-gray-300 shadow-md'
-                                            : 'border-gray-100 hover:border-gray-300 hover:shadow-sm'
+                                        ? 'border-gray-300 shadow-md'
+                                        : 'border-gray-100 hover:border-gray-300 hover:shadow-sm'
                                         }`}
                                 >
                                     <button

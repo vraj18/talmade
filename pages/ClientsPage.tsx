@@ -3,7 +3,7 @@ import { RevealOnScroll } from "../components/ui/RevealOnScroll";
 
 // Import all client logos
 import client1 from "../assets/clients/client1.png";
-import client2 from "../assets/clients/client2.png";
+import client2 from "../assets/clients/client2.jpeg";
 import client3 from "../assets/clients/client3.png";
 import client4 from "../assets/clients/client4.png";
 import client5 from "../assets/clients/client5.png";
@@ -20,7 +20,7 @@ import client15 from "../assets/clients/client15.png";
 import client16 from "../assets/clients/client16.png";
 import client17 from "../assets/clients/client17.png";
 import client18 from "../assets/clients/client18.png";
-import client19 from "../assets/clients/client19.png";
+
 import client20 from "../assets/clients/client20.png";
 import client21 from "../assets/clients/client21.png";
 import client22 from "../assets/clients/client22.png";
@@ -39,7 +39,7 @@ import client34 from "../assets/clients/client34.png";
 import client35 from "../assets/clients/client35.png";
 import client36 from "../assets/clients/client36.png";
 import client37 from "../assets/clients/client37.png";
-import client38 from "../assets/clients/client38.png";
+import client38 from "../assets/clients/client38.svg";
 import client39 from "../assets/clients/client39.png";
 import client40 from "../assets/clients/client40.png";
 import client41 from "../assets/clients/client41.png";
@@ -60,6 +60,11 @@ import client55 from "../assets/clients/client55.png";
 import client56 from "../assets/clients/client56.png";
 import client57 from "../assets/clients/client57.png";
 import client58 from "../assets/clients/client58.png";
+import client59 from "../assets/clients/client59.svg";
+import client60 from "../assets/clients/client60.jpeg";
+import client61 from "../assets/clients/client61.svg";
+import client62 from "../assets/clients/client62.png";
+import client63 from "../assets/clients/client63.jpeg";
 
 
 import dealer1 from "../assets/dealers/dealer1.png";
@@ -94,7 +99,7 @@ const CLIENTS = [
   { name: "client16", logo: client16 },
   { name: "client17", logo: client17 },
   { name: "client18", logo: client18 },
-  { name: "client19", logo: client19 },
+
   { name: "client20", logo: client20 },
   { name: "client21", logo: client21 },
   { name: "client22", logo: client22 },
@@ -134,6 +139,11 @@ const CLIENTS = [
   { name: "client56", logo: client56 },
   { name: "client57", logo: client57 },
   { name: "client58", logo: client58 },
+  { name: "client59", logo: client59 },
+  { name: "client60", logo: client60 },
+  { name: "client61", logo: client61 },
+  { name: "client62", logo: client62 },
+  { name: "client63", logo: client63 },
 ];
 
 const DEALERS = [

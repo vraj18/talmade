@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 const CLIENTS = [
+  { name: 'Raymond', logoKey: 'dealer2.png' },
   { name: 'JIO', logoKey: 'client1.png' },
-  { name: 'JSW', logoKey: 'client2.png' },
+  { name: 'JSW', logoKey: 'client2.jpeg' },
   { name: 'ESSAR', logoKey: 'client3.png' },
   { name: 'PSIPL', logoKey: 'client4.png' },
   { name: 'ONGC', logoKey: 'client5.png' },
@@ -15,11 +16,11 @@ const CLIENTS = [
   { name: 'ADANI', logoKey: 'client12.png' },
   { name: 'BIRLA', logoKey: 'client13.png' },
   { name: 'HAVELLS', logoKey: 'client14.png' },
-  { name: 'LARSEN & TOUBRO', logoKey: 'client15.png' },
+
   { name: 'BOSCH', logoKey: 'client16.png' },
   { name: 'SIEMENS', logoKey: 'client17.png' },
   { name: 'VOLTAS', logoKey: 'client18.png' },
-  { name: 'GODREJ', logoKey: 'client19.png' },
+
   { name: 'DABUR', logoKey: 'client20.png' },
 ];
 
@@ -32,8 +33,9 @@ export function ClientsMarquee() {
     const importLogos = async () => {
       try {
         const imports = await Promise.all([
+          import('../assets/dealers/dealer2.png'),
           import('../assets/clients/client1.png'),
-          import('../assets/clients/client2.png'),
+          import('../assets/clients/client2.jpeg'),
           import('../assets/clients/client3.png'),
           import('../assets/clients/client4.png'),
           import('../assets/clients/client5.png'),
@@ -46,11 +48,11 @@ export function ClientsMarquee() {
           import('../assets/clients/client12.png'),
           import('../assets/clients/client13.png'),
           import('../assets/clients/client14.png'),
-          import('../assets/clients/client15.png'),
+
           import('../assets/clients/client16.png'),
           import('../assets/clients/client17.png'),
           import('../assets/clients/client18.png'),
-          import('../assets/clients/client19.png'),
+
           import('../assets/clients/client20.png'),
         ]);
 
