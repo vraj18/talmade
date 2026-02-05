@@ -3,7 +3,7 @@ import { RevealOnScroll } from "../components/ui/RevealOnScroll";
 
 // Import all client logos
 import client1 from "../assets/clients/client1.png";
-import client2 from "../assets/clients/client2.jpeg";
+import client2 from "../assets/clients/client2.png";
 import client3 from "../assets/clients/client3.png";
 import client4 from "../assets/clients/client4.png";
 import client5 from "../assets/clients/client5.png";

@@ -52,7 +52,7 @@ export const Partnership: React.FC = () => {
                     </RevealOnScroll>
                     <RevealOnScroll delay={200} className="max-w-md md:mt-12">
                         <p className="text-gray-600 text-lg">
-                            We are a uniform manufacturer, wholesaler, and supplier of an elite and diverse range of high-quality uniforms to industries such as education, security and defence, industrial, corporate, health and hospitality.
+                            We are a globally recognized uniform manufacturer, wholesaler, and supplier, serving clients worldwide. We deliver an elite and diverse range of high-quality uniforms to international industries including education, security, defence, industrial, corporate, health, and hospitality.
                         </p>
                     </RevealOnScroll>
                 </div>
@@ -71,8 +71,8 @@ export const Partnership: React.FC = () => {
                     <RevealOnScroll delay={200} className="w-full lg:w-1/2">
                         <div className="space-y-8">
                             {[
-                                "We understand the significance of uniforms in branding as experts. We are extremely passionate about our business and only provide high-quality materials for you to choose from. Our team works tirelessly to produce immaculate quality uniforms using innovative designs and techniques.",
-                                "Our uniforms are created with high-quality fabrics sourced from reputable market vendors. Following stringent quality checks, we offer a high-quality collection that is well-known for its fine quality, durability, colorfastness, and proper fit. These uniforms are designed to meet the needs of clients in a variety of commercial sectors."
+                                "As global experts, we understand the significance of uniforms in branding. We are extremely passionate about our business and only provide high-quality materials for you to choose from. Our team works tirelessly to produce immaculate quality uniforms using innovative designs and techniques.",
+                                "Our uniforms are created with high-quality fabrics sourced from reputable international and domestic vendors. Following stringent quality checks, we offer a high-quality collection that is well-known for its fine quality, durability, colorfastness, and proper fit. These uniforms are designed to meet the needs of clients in a variety of commercial sectors globally."
                             ].map((item, i) => (
                                 <div key={i} className="flex gap-4 items-start">
                                     <Check className="w-6 h-6 text-black flex-shrink-0 mt-1" />
@@ -91,7 +91,7 @@ export const Partnership: React.FC = () => {
                         <span className="text-xs font-bold tracking-widest text-gray-500 uppercase block mb-4">Mission & Vision</span>
                         <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
                         <p className="text-gray-700 text-lg leading-relaxed">
-                            Our mission is to create a global brand in the uniform apparel business and to be the dominant manufacturer in the garments industry — slowly and gradually building trust through world-class people and service, and creating a loyal customer base across the country and overseas by consistently delivering world-class products.
+                            Our mission is to create a global brand in the uniform apparel business and to be the dominant manufacturer in the garments industry — slowly and gradually building trust through world-class people and service, and creating a loyal customer base across the globe by consistently delivering world-class products.
                         </p>
 
                         <h3 className="text-2xl font-bold mt-8 mb-4">Our Vision</h3>

@@ -35,7 +35,7 @@ export function ContactPage() {
                                         </div>
                                         <h2 className="text-2xl font-bold">Corporate Office</h2>
                                     </div>
-                                    
+
                                     <div className="space-y-4 text-gray-600 mb-8">
                                         <p>2ND FLOOR Plot-E/4-5-6, Functional Industrial Estate,</p>
                                         <p>Subhashchandra Road, Near jalaram Way Bridge,</p>
@@ -47,16 +47,20 @@ export function ContactPage() {
                                             <Phone className="w-5 h-5" />
                                             <a href="tel:+918141510885" className="hover:text-black transition-colors">+91 81415 10885</a>
                                         </div>
-                                        <div className="flex items-center gap-3 text-gray-600">
-                                            <Mail className="w-5 h-5" />
-                                            <div>
-                                                <a href="mailto:info@talmade.com" className="block hover:text-black transition-colors">info@talmade.com</a>
-                                                <a href="mailto:info.talmade@gmail.com" className="block hover:text-black transition-colors">info.talmade@gmail.com</a>
+                                        <div className="flex items-start gap-3 text-gray-600">
+                                            <Mail className="w-5 h-5 mt-1" />
+                                            <div className="space-y-1">
+                                                <a href="mailto:Vijay@talmade.in" className="block hover:text-black transition-colors">Vijay@talmade.in</a>
+                                                <a href="mailto:Info@talmade.in" className="block hover:text-black transition-colors">Info@talmade.in</a>
+                                                <a href="mailto:Accounts@talmade.in" className="block hover:text-black transition-colors">Accounts@talmade.in</a>
+                                                <a href="mailto:Store@talmade.in" className="block hover:text-black transition-colors">Store@talmade.in</a>
+                                                <a href="mailto:Sales@talmade.in" className="block hover:text-black transition-colors">Sales@talmade.in</a>
+                                                <a href="mailto:Tejas@talmade.in" className="block hover:text-black transition-colors">Tejas@talmade.in</a>
+                                                <a href="mailto:Pradeep@talmade.in" className="block hover:text-black transition-colors">Pradeep@talmade.in</a>
+                                                <a href="mailto:Customer.support@talmade.in" className="block hover:text-black transition-colors">Customer.support@talmade.in</a>
+                                                <a href="mailto:Plant.vapi@talmade.in" className="block hover:text-black transition-colors">Plant.vapi@talmade.in</a>
+                                                <a href="mailto:Plant.Kolkata@talmade.in" className="block hover:text-black transition-colors">Plant.Kolkata@talmade.in</a>
                                             </div>
-                                        </div>
-                                        <div className="flex items-center gap-3 text-gray-600">
-                                            <Globe className="w-5 h-5" />
-                                            <a href="https://www.talmade.com" className="hover:text-black transition-colors">www.talmade.com</a>
                                         </div>
                                     </div>
                                 </div>
@@ -80,7 +84,7 @@ export function ContactPage() {
                                                     loading="lazy"
                                                 ></iframe>
                                             </div>
-                                            
+
                                             {/* Map Label */}
                                             <div className="absolute top-4 left-4 bg-black text-white px-3 py-1.5 rounded-full text-xs font-medium">
                                                 Surat, Gujarat
@@ -99,7 +103,7 @@ export function ContactPage() {
                         <h2 className="text-2xl font-bold text-center">Our Presence</h2>
                         <p className="text-gray-500 text-center mt-2">Serving clients across major cities in India</p>
                     </div>
-                    
+
                     <div className="relative overflow-hidden bg-white rounded-2xl shadow-sm border border-gray-100 py-6">
                         <div className="animate-marquee flex whitespace-nowrap">
                             {marqueeCities.map((city, index) => (

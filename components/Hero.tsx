@@ -29,7 +29,7 @@ export const Hero: React.FC = () => {
           </h1>
 
           <p className="max-w-xl text-lg text-gray-300 leading-relaxed mb-10 border-l-2 border-white/30 pl-6">
-            Modern enterprises need an agile manufacturing partner. We design, build, and scale corporate uniform programs that drive brand clarity and employee pride.
+            Modern enterprises need a globally capable manufacturing partner. We design, build, and scale corporate uniform programs that drive brand clarity and employee pride, delivering excellence across international borders.
           </p>
         </RevealOnScroll>
 
