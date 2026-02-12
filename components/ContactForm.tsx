@@ -5,260 +5,245 @@ import {
   CheckCircle,
   AlertCircle,
   Briefcase,
-  Copy,
-  Check,
+
 } from "lucide-react";
 
 export const ContactForm: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [copied, setCopied] = useState(false);
+
+  const [focusedField, setFocusedField] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      await fetch("https://script.google.com/macros/s/AKfycbwAKoN6ilq2XsBH2Qeexy67heO30Hm3RTH8KQA7bcj7G54xV_TjPJl_NtZGBB1wbnP25w/exec", {
-        method: "POST",
-        body: new FormData(e.currentTarget),
-      });
-
-      // Assume success
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbwAKoN6ilq2XsBH2Qeexy67heO30Hm3RTH8KQA7bcj7G54xV_TjPJl_NtZGBB1wbnP25w/exec",
+        {
+          method: "POST",
+          body: new FormData(e.currentTarget),
+        }
+      );
       setSubmitted(true);
       e.currentTarget.reset();
     } catch (error) {
       console.error(error);
-      //   alert("Submission failed. Please try again.");
     } finally {
       setLoading(false);
     }
   };
 
-  const handleCopyEmail = () => {
-    navigator.clipboard
-      .writeText("info.talmade@gmail.com")
-      .then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-      })
-      .catch((err) => {
-        console.error("Failed to copy email: ", err);
-      });
-  };
+
+
+  const inputClasses = (name: string) =>
+    `w-full bg-gray-50 border-2 rounded-lg p-3 text-sm transition-all duration-300 outline-none ${focusedField === name
+      ? "border-black shadow-md bg-white translate-x-1"
+      : "border-transparent hover:border-gray-200"
+    }`;
+
+  const labelClasses = "block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1.5 ml-1";
 
   return (
-    <section id="contact" className="py-20 bg-white text-black">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="flex flex-col lg:flex-row gap-12">
-          <div className="lg:w-1/2">
+    <section id="contact" className="py-20 bg-gradient-to-br from-white to-gray-50 text-black overflow-hidden">
+      <div className="container mx-auto px-6 md:px-12 relative">
+
+        {/* Decorative Background Elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gray-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
+        <div className="absolute top-0 right-40 w-96 h-96 bg-gray-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+
+        <div className="flex flex-col lg:flex-row gap-16 relative z-10">
+
+          {/* Left Side: Context & Info */}
+          <div className="lg:w-5/12 space-y-8">
             <RevealOnScroll>
-              <span className="text-xs font-bold tracking-widest text-gray-500 uppercase block mb-3">
+              <span className="inline-block py-1 px-3 rounded-full bg-black/5 text-black text-xs font-bold tracking-widest uppercase mb-4 border border-black/10">
                 Contact Us
               </span>
-              <h2 className="text-4xl font-display font-bold tracking-tighter mb-5">
-                Send us your Enquiry
+              <h2 className="text-5xl md:text-6xl font-display font-bold tracking-tighter mb-6 leading-none">
+                Let's Build <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-500">
+                  Something Great.
+                </span>
               </h2>
-              <p className="text-gray-600 mb-7">
-                Fill out a short application to secure your consultation slot.
-                Our online application is free, and no special documentation is
-                required for the initial chat.
+              <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                Ready to elevate your brand's uniform? Fill out the form to secure your consultation slot.
+                Our process is streamlined, transparent, and designed for your success.
               </p>
-              <div className="space-y-3">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
+
+              {/* <div className="space-y-6">
+                <div className="group flex items-start gap-4 p-4 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100">
+                  <div className="w-12 h-12 bg-black text-white rounded-xl flex items-center justify-center font-bold text-xl flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
                     1
                   </div>
                   <div>
-                    <h4 className="font-bold">Tell us about your needs</h4>
-                    <p className="text-gray-500 text-sm">
-                      Quantity, fabric preference, and timeline.
+                    <h4 className="font-bold text-lg group-hover:text-black transition-colors">Tell us about your needs</h4>
+                    <p className="text-gray-500 text-sm mt-1">
+                      Share your quantity, fabric preferences, and timeline.
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-gray-100 text-black rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
+
+                <div className="group flex items-start gap-4 p-4 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100">
+                  <div className="w-12 h-12 bg-white text-black border-2 border-black rounded-xl flex items-center justify-center font-bold text-xl flex-shrink-0 shadow-sm group-hover:bg-black group-hover:text-white transition-all duration-300">
                     2
                   </div>
                   <div>
-                    <h4 className="font-bold">Get a Custom Quote</h4>
-                    <p className="text-gray-500 text-sm">
+                    <h4 className="font-bold text-lg group-hover:text-black transition-colors">Get a Custom Quote</h4>
+                    <p className="text-gray-500 text-sm mt-1">
                       We'll provide a detailed breakdown within 24 hours.
                     </p>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
-              {/* Compact Join Us Section */}
-              <div className="mt-6">
-                <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-9 h-9 bg-black text-white rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Briefcase className="w-4 h-4" />
+              {/* Career Card */}
+              <div className="mt-12 group relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-100 to-gray-200 rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
+                <div className="relative bg-white border border-gray-100 rounded-2xl p-6 shadow-sm group-hover:-translate-y-2 transition-transform duration-300">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-10 h-10 bg-gray-900 text-white rounded-lg flex items-center justify-center shadow-md">
+                      <Briefcase className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900">
-                        Career Opportunities
-                      </h4>
-                      <p className="text-xs text-gray-500">
-                        Join our mission-driven team
-                      </p>
+                      <h4 className="font-bold text-gray-900 leading-tight">Career Opportunities</h4>
+                      <p className="text-xs text-gray-500">Join our mission-driven team</p>
                     </div>
                   </div>
 
-                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                    Looking to build a meaningful career in sustainable
-                    manufacturing? We're always seeking talented individuals
-                    passionate about quality and innovation.
-                  </p>
-
-                  <div className="mb-3">
-                    <div className="flex items-center justify-between bg-gray-50 border border-gray-200 rounded-lg p-2.5">
-                      <span className="font-medium text-gray-700 text-sm">
-                        info.talmade@gmail.com
-                      </span>
-                      <button
-                        onClick={handleCopyEmail}
-                        className="flex items-center gap-1.5 bg-black text-white hover:bg-gray-800 text-xs font-medium py-1.5 px-3 rounded transition-colors"
-                      >
-                        {copied ? (
-                          <>
-                            <Check className="w-3.5 h-3.5" />
-                            <span>Copied</span>
-                          </>
-                        ) : (
-                          <>
-                            <Copy className="w-3.5 h-3.5" />
-                            <span>Copy</span>
-                          </>
-                        )}
-                      </button>
-                    </div>
+                  <div className="flex items-center justify-between bg-gray-50 border border-gray-100 rounded-xl p-3 shadow-inner">
+                    <span className="font-medium text-gray-600 text-sm truncate mr-4">
+                      Join Our Team
+                    </span>
+                    <a
+                      href="https://forms.gle/tn4cZparWucmgd9d8"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 bg-black text-white hover:bg-gray-800 text-xs font-bold py-2 px-4 rounded-lg transition-all duration-300 active:scale-95 no-underline"
+                    >
+                      Apply Now
+                    </a>
                   </div>
-
-                  <p className="text-xs text-gray-500 text-center">
-                    Submit your resume/CV to the email above
+                  <p className="text-xs text-gray-400 mt-3 text-center">
+                    Fill out the form to apply
                   </p>
                 </div>
               </div>
             </RevealOnScroll>
           </div>
 
-          <div className="lg:w-1/2 bg-gray-50 p-6 md:p-10 rounded-2xl shadow-inner">
+          {/* Right Side: Form */}
+          <div className="lg:w-7/12 mt-8 lg:mt-0">
             <RevealOnScroll delay={200}>
-              {submitted ? (
-                <div className="h-full flex flex-col items-center justify-center text-center py-10">
-                  <div className="w-14 h-14 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-5">
-                    <CheckCircle className="w-7 h-7" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">Request Received!</h3>
-                  <p className="text-gray-600 text-sm">
-                    We'll be in touch regarding your uniform requirements
-                    shortly.
-                  </p>
-                  <button
-                    onClick={() => setSubmitted(false)}
-                    className="mt-5 px-5 py-1.5 text-black border border-black rounded-full hover:bg-black hover:text-white transition-colors text-sm"
-                  >
-                    Send another request
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1.5"
-                    >
-                      Full Name
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      required
-                      className="w-full bg-white border-b-2 border-gray-200 p-2.5 focus:outline-none focus:border-black transition-colors text-sm"
-                      placeholder="Jane Doe"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1.5"
-                    >
-                      Work Email
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      className="w-full bg-white border-b-2 border-gray-200 p-2.5 focus:outline-none focus:border-black transition-colors text-sm"
-                      placeholder="jane@company.com"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="mobile"
-                      className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1.5"
-                    >
-                      Mobile Number
-                    </label>
-                    <input
-                      type="tel"
-                      name="mobile"
-                      required
-                      className="w-full bg-white border-b-2 border-gray-200 p-2.5 focus:outline-none focus:border-black transition-colors text-sm"
-                      placeholder="+91 98765 43210"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="company"
-                      className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1.5"
-                    >
-                      Company Name
-                    </label>
-                    <input
-                      type="text"
-                      name="company"
-                      required
-                      className="w-full bg-white border-b-2 border-gray-200 p-2.5 focus:outline-none focus:border-black transition-colors text-sm"
-                      placeholder="Enter your Company Name"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1.5"
-                    >
-                      Enquiry Details (Quantity, Type)
-                    </label>
-                    <textarea
-                      name="message"
-                      rows={3}
-                      required
-                      className="w-full bg-white border-b-2 border-gray-200 p-2.5 focus:outline-none focus:border-black transition-colors resize-none text-sm"
-                      placeholder="We need 500 polo shirts..."
-                    ></textarea>
-                  </div>
-
-                  <div className="pt-3">
-                    <button
-                      type="submit"
-                      disabled={loading}
-                      className="w-full bg-black text-white font-medium py-3 rounded-full hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 disabled:opacity-70 group text-sm"
-                    >
-                      {loading ? "Sending..." : "Submit Request"}
-                      {!loading && (
-                        <Send className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                      )}
-                    </button>
-                    <p className="text-xs text-center text-gray-400 mt-3 flex items-center justify-center gap-1">
-                      <AlertCircle className="w-2.5 h-1.5" />
-                      Data is securely processed via Google Forms
+              <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100 relative overflow-hidden">
+                {submitted ? (
+                  <div className="h-[600px] flex flex-col items-center justify-center text-center animate-fade-in">
+                    <div className="w-24 h-24 relative mb-8">
+                      <svg className="w-full h-full text-green-500" viewBox="0 0 52 52">
+                        <circle className="opacity-20" cx="26" cy="26" r="25" fill="none" stroke="currentColor" strokeWidth="4" />
+                        <path className="animate-checkmark" fill="none" stroke="currentColor" strokeWidth="4" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                      </svg>
+                    </div>
+                    <h3 className="text-3xl font-bold mb-4 font-display">Request Received!</h3>
+                    <p className="text-gray-600 text-lg max-w-sm mb-8">
+                      We'll be in touch regarding your uniform requirements shortly.
                     </p>
+                    <button
+                      onClick={() => setSubmitted(false)}
+                      className="px-8 py-3 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all duration-300 hover:shadow-lg active:scale-95 text-sm font-medium"
+                    >
+                      Send another request
+                    </button>
                   </div>
-                </form>
-              )}
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="col-span-1">
+                        <label htmlFor="name" className={labelClasses}>Full Name</label>
+                        <input
+                          type="text"
+                          name="name"
+                          required
+                          onFocus={() => setFocusedField("name")}
+                          onBlur={() => setFocusedField(null)}
+                          className={inputClasses("name")}
+                          placeholder="Jane Doe"
+                        />
+                      </div>
+                      <div className="col-span-1">
+                        <label htmlFor="company" className={labelClasses}>Company Name</label>
+                        <input
+                          type="text"
+                          name="company"
+                          required
+                          onFocus={() => setFocusedField("company")}
+                          onBlur={() => setFocusedField(null)}
+                          className={inputClasses("company")}
+                          placeholder="Acme Corp"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="col-span-1">
+                        <label htmlFor="email" className={labelClasses}>Work Email</label>
+                        <input
+                          type="email"
+                          name="email"
+                          required
+                          onFocus={() => setFocusedField("email")}
+                          onBlur={() => setFocusedField(null)}
+                          className={inputClasses("email")}
+                          placeholder="jane@company.com"
+                        />
+                      </div>
+                      <div className="col-span-1">
+                        <label htmlFor="mobile" className={labelClasses}>Mobile Number</label>
+                        <input
+                          type="tel"
+                          name="mobile"
+                          required
+                          onFocus={() => setFocusedField("mobile")}
+                          onBlur={() => setFocusedField(null)}
+                          className={inputClasses("mobile")}
+                          placeholder="+91 98765 43210"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label htmlFor="message" className={labelClasses}>Enquiry Details</label>
+                      <textarea
+                        name="message"
+                        rows={4}
+                        required
+                        onFocus={() => setFocusedField("message")}
+                        onBlur={() => setFocusedField(null)}
+                        className={inputClasses("message")}
+                        placeholder="Please describe your requirements (Quantity, Fabric type, Timeline)..."
+                      ></textarea>
+                    </div>
+
+                    <div className="pt-4">
+                      <button
+                        type="submit"
+                        disabled={loading}
+                        className="group w-full bg-black text-white font-bold py-4 rounded-xl hover:bg-gray-900 transition-all duration-300 hover:shadow-xl active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-3 text-lg"
+                      >
+                        {loading ? "Sending..." : "Submit Enquiry"}
+                        {!loading && (
+                          <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                        )}
+                      </button>
+                      <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-400">
+                        <AlertCircle className="w-3 h-3" />
+                        <span>Your data is securely processed and never shared.</span>
+                      </div>
+                    </div>
+                  </form>
+                )}
+              </div>
             </RevealOnScroll>
           </div>
         </div>

@@ -50,8 +50,9 @@ export function ContactPage() {
                                         <div className="flex items-start gap-3 text-gray-600">
                                             <Mail className="w-5 h-5 mt-1" />
                                             <div className="space-y-1">
+                                                <a href="mailto:info.talmade@gmail.com" className="block hover:text-black transition-colors">info.talmade@gmail.com</a>
+                                                <a href="mailto:info@talmade.in" className="block hover:text-black transition-colors">info@talmade.in</a>
                                                 <a href="mailto:Vijay@talmade.in" className="block hover:text-black transition-colors">Vijay@talmade.in</a>
-                                                <a href="mailto:Info@talmade.in" className="block hover:text-black transition-colors">Info@talmade.in</a>
                                                 <a href="mailto:Accounts@talmade.in" className="block hover:text-black transition-colors">Accounts@talmade.in</a>
                                                 <a href="mailto:Store@talmade.in" className="block hover:text-black transition-colors">Store@talmade.in</a>
                                                 <a href="mailto:Sales@talmade.in" className="block hover:text-black transition-colors">Sales@talmade.in</a>
