@@ -9,7 +9,12 @@ export function ContactPage() {
         "Chhatrapati Sambhajinagar",
         "Bangalore",
         "Mumbai",
-        "Surat"
+        "Surat",
+        "Delhi",
+        "Pune",
+        "Ahmedabad",
+        "Bhopal",
+        "Guwahati"
     ];
 
     // Duplicate cities for seamless marquee
@@ -52,15 +57,6 @@ export function ContactPage() {
                                             <div className="space-y-1">
                                                 <a href="mailto:info.talmade@gmail.com" className="block hover:text-black transition-colors">info.talmade@gmail.com</a>
                                                 <a href="mailto:info@talmade.in" className="block hover:text-black transition-colors">info@talmade.in</a>
-                                                <a href="mailto:Vijay@talmade.in" className="block hover:text-black transition-colors">Vijay@talmade.in</a>
-                                                <a href="mailto:Accounts@talmade.in" className="block hover:text-black transition-colors">Accounts@talmade.in</a>
-                                                <a href="mailto:Store@talmade.in" className="block hover:text-black transition-colors">Store@talmade.in</a>
-                                                <a href="mailto:Sales@talmade.in" className="block hover:text-black transition-colors">Sales@talmade.in</a>
-                                                <a href="mailto:Tejas@talmade.in" className="block hover:text-black transition-colors">Tejas@talmade.in</a>
-                                                <a href="mailto:Pradeep@talmade.in" className="block hover:text-black transition-colors">Pradeep@talmade.in</a>
-                                                <a href="mailto:Customer.support@talmade.in" className="block hover:text-black transition-colors">Customer.support@talmade.in</a>
-                                                <a href="mailto:Plant.vapi@talmade.in" className="block hover:text-black transition-colors">Plant.vapi@talmade.in</a>
-                                                <a href="mailto:Plant.Kolkata@talmade.in" className="block hover:text-black transition-colors">Plant.Kolkata@talmade.in</a>
                                             </div>
                                         </div>
                                     </div>
@@ -102,7 +98,7 @@ export function ContactPage() {
                 <div className="max-w-6xl mx-auto">
                     <div className="mb-6">
                         <h2 className="text-2xl font-bold text-center">Our Presence</h2>
-                        <p className="text-gray-500 text-center mt-2">Serving clients across major cities in India</p>
+                        <p className="text-gray-500 text-center mt-2">Serving clients across India and USA</p>
                     </div>
 
                     <div className="relative overflow-hidden bg-white rounded-2xl shadow-sm border border-gray-100 py-6">
