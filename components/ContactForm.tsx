@@ -117,7 +117,7 @@ export const ContactForm: React.FC = () => {
                       Join Our Team
                     </span>
                     <a
-                      href="https://forms.gle/tn4cZparWucmgd9d8"
+                      href="https://forms.gle/27KUcYD1FKR2TsxZ7"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 bg-black text-white hover:bg-gray-800 text-xs font-bold py-2 px-4 rounded-lg transition-all duration-300 active:scale-95 no-underline"
