@@ -37,7 +37,7 @@ export const TermsPage: React.FC = () => {
                 ("Talmade Apparels", "Company", "we", "us", "our").
               </p>
               <p className="mb-3">
-                Talmade Apparels Private Limited was founded on 6 July 1992 by Mr. Vijay Kumar Gupta under the
+                Talmade Apparels Private Limited was founded on 6 July 2011 by Mr. Vijay Kumar Gupta under the
                 name Gupta Silk Mills and was subsequently rebranded as Talmade Apparels on 9 July 2024.
                 The Company is engaged in the manufacturing, wholesale, and supply of high-quality uniforms
                 for industries including education, security and defence, industrial, corporate, healthcare, and hospitality.
