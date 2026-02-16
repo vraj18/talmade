@@ -135,9 +135,19 @@ export function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`md:hidden p-2 transition-colors ${menuButtonColor}`}
+              className={`md:hidden p-2 transition-colors relative w-10 h-10 flex items-center justify-center ${menuButtonColor}`}
+              aria-label="Toggle menu"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              <div className="relative w-6 h-6">
+                <Menu
+                  className={`w-6 h-6 absolute top-0 left-0 transition-all duration-300 ease-in-out ${isOpen ? 'opacity-0 rotate-90 scale-50' : 'opacity-100 rotate-0 scale-100'
+                    }`}
+                />
+                <X
+                  className={`w-6 h-6 absolute top-0 left-0 transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-50'
+                    }`}
+                />
+              </div>
             </button>
           </div>
         </div>
@@ -149,39 +159,49 @@ export function Navbar() {
           <div className="flex flex-col p-4 space-y-4">
             {navLinks.map((link) => (
               <div key={link.name} className="flex flex-col">
-                <div className="flex items-center justify-between">
-                  <a
-                    href={link.href}
-                    onClick={!link.hasDropdown ? handleLinkClick : undefined}
-                    className="text-base font-medium text-gray-600 hover:text-black py-2"
+                {link.hasDropdown ? (
+                  <button
+                    onClick={() => setActiveDropdown(activeDropdown === link.name ? null : link.name)}
+                    className="flex items-center justify-between w-full py-2 group"
                   >
-                    {link.name}
-                  </a>
-                  {link.hasDropdown && (
-                    <button
-                      onClick={() => setActiveDropdown(activeDropdown === link.name ? null : link.name)}
-                      className="p-2"
+                    <span className="text-base font-medium text-gray-600 group-hover:text-black transition-colors">
+                      {link.name}
+                    </span>
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === link.name ? 'rotate-180' : ''
+                        }`}
+                    />
+                  </button>
+                ) : (
+                  <div className="flex items-center justify-between py-2">
+                    <a
+                      href={link.href}
+                      onClick={handleLinkClick}
+                      className="text-base font-medium text-gray-600 hover:text-black"
                     >
-                      <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === link.name ? 'rotate-180' : ''}`} />
-                    </button>
-                  )}
-                </div>
-
-                {/* Mobile Dropdown */}
-                {link.hasDropdown && activeDropdown === link.name && (
-                  <div className="pl-4 border-l border-gray-100 mt-2 space-y-2">
-                    {PRODUCT_CATEGORIES.map((category) => (
-                      <Link
-                        key={category.id}
-                        to={`/category/${category.id}`}
-                        onClick={handleLinkClick}
-                        className="block py-2 text-sm text-gray-500 hover:text-black"
-                      >
-                        {category.name}
-                      </Link>
-                    ))}
+                      {link.name}
+                    </a>
                   </div>
                 )}
+
+
+                {/* Mobile Dropdown */}
+                {
+                  link.hasDropdown && activeDropdown === link.name && (
+                    <div className="pl-4 border-l border-gray-100 mt-2 space-y-2">
+                      {PRODUCT_CATEGORIES.map((category) => (
+                        <Link
+                          key={category.id}
+                          to={`/category/${category.id}`}
+                          onClick={handleLinkClick}
+                          className="block py-2 text-sm text-gray-500 hover:text-black"
+                        >
+                          {category.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )
+                }
               </div>
             ))}
             <a
@@ -193,7 +213,8 @@ export function Navbar() {
             </a>
           </div>
         </div>
-      )}
-    </nav>
+      )
+      }
+    </nav >
   );
 }
