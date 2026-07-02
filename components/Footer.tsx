@@ -34,8 +34,8 @@ export const Footer: React.FC = () => {
                         <h4 className="font-bold text-lg mb-6">Customer Support</h4>
                         <ul className="space-y-4 text-gray-400 text-sm">
                             <li className="mb-8">
-                                <a href="mailto:info.talmade@gmail.com" className="hover:text-white transition-colors">
-                                    info.talmade@gmail.com
+                                <a href="mailto:Info.talmade@.com" className="hover:text-white transition-colors">
+                                    Info.talmade@.com
                                 </a>
                             </li>
                         </ul>
@@ -92,7 +92,7 @@ export const Footer: React.FC = () => {
                 </div>
 
                 <div className="flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 pt-8 border-t border-gray-900">
-                    <p>&copy; {currentYear} Talmade Uniforms. All rights reserved.</p>
+                    <p>&copy; {currentYear} Talmade Appearals. All rights reserved.</p>
                     <div className="flex gap-4 mt-4 md:mt-0">
                         <Link to="/privacy" className="hover:text-gray-400">Privacy Policy</Link>
                         <Link to="/terms" className="hover:text-gray-400">Terms & Conditions</Link>
