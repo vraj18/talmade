@@ -14,9 +14,13 @@ export const Footer: React.FC = () => {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-24">
 
                     <div>
-                        <h4 className="font-bold text-lg mb-6">Corporate Office</h4>
+                        <h4 className="font-bold text-lg mb-6">Registered Office</h4>
                         <ul className="space-y-4 text-gray-400 text-sm">
                             <li>2ND FLOOR Plot-E/4-5-6, Functional Industrial Estate,Subhashchandra Road, Near jalaram Way Bridge,Road No/8, Udhna, Surat Gujarat-394210 India.</li>
+                        </ul>
+                        <h4 className="font-bold text-lg mt-6 mb-4">Corporate Office</h4>
+                        <ul className="space-y-4 text-gray-400 text-sm">
+                            <li>1st floor, Leelvathi Nagar, Mangadu, Sikkarayapuram, Chennai, Tamil Nadu 600122</li>
                         </ul>
                     </div>
 

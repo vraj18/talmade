@@ -38,13 +38,15 @@ export function ContactPage() {
                                         <div className="w-12 h-12 bg-black text-white rounded-xl flex items-center justify-center">
                                             <MapPin className="w-6 h-6" />
                                         </div>
-                                        <h2 className="text-2xl font-bold">Corporate Office</h2>
+                                        <h2 className="text-2xl font-bold">Registered Office</h2>
                                     </div>
 
                                     <div className="space-y-4 text-gray-600 mb-8">
                                         <p>2ND FLOOR Plot-E/4-5-6, Functional Industrial Estate,</p>
                                         <p>Subhashchandra Road, Near jalaram Way Bridge,</p>
                                         <p>Road No/8, Udhna, Surat Gujarat-394210 India.</p>
+                                        <h3 className="text-2xl font-bold text-black pt-4">Corporate Office</h3>
+                                        <p>1st floor, Leelvathi Nagar, Mangadu, Sikkarayapuram, Chennai, Tamil Nadu 600122</p>
                                     </div>
 
                                     <div className="space-y-4">
