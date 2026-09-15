@@ -20,6 +20,12 @@ export function ContactPage() {
     // Duplicate cities for seamless marquee
     const marqueeCities = [...cities, ...cities];
 
+    const [activeOffice, setActiveOffice] = React.useState<'registered' | 'corporate'>('registered');
+    const registeredOfficeMap = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.9169835466986!2d72.8422467!3d21.1738289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04fac5c149a93%3A0xb8137fe457cf747a!2sTALMADE%20APPREALS%20PRIVATE%20LIMITED!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin";
+    const corporateOfficeMap = "https://www.google.com/maps?q=13.0196797,80.1029455&z=16&output=embed";
+    const activeMap = activeOffice === 'registered' ? registeredOfficeMap : corporateOfficeMap;
+    const activeMapLabel = activeOffice === 'registered' ? 'Surat, Gujarat' : 'Chennai, Tamil Nadu';
+
     return (
         <div className="pt-32 pb-20 bg-gray-50 min-h-screen">
             <div className="container mx-auto px-4 md:px-6">
@@ -35,9 +41,15 @@ export function ContactPage() {
                                 {/* Left: Corporate Office Info */}
                                 <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col">
                                     <div className="flex items-center gap-3 mb-6">
-                                        <div className="w-12 h-12 bg-black text-white rounded-xl flex items-center justify-center">
+                                        <button
+                                            type="button"
+                                            onClick={() => setActiveOffice('registered')}
+                                            aria-label="Show Registered Office on map"
+                                            aria-pressed={activeOffice === 'registered'}
+                                            className="w-12 h-12 bg-black text-white rounded-xl flex items-center justify-center"
+                                        >
                                             <MapPin className="w-6 h-6" />
-                                        </div>
+                                        </button>
                                         <h2 className="text-2xl font-bold">Registered Office</h2>
                                     </div>
 
@@ -45,7 +57,18 @@ export function ContactPage() {
                                         <p>2ND FLOOR Plot-E/4-5-6, Functional Industrial Estate,</p>
                                         <p>Subhashchandra Road, Near jalaram Way Bridge,</p>
                                         <p>Road No/8, Udhna, Surat Gujarat-394210 India.</p>
-                                        <h3 className="text-2xl font-bold text-black pt-4">Corporate Office</h3>
+                                        <div className="flex items-center gap-3 pt-4">
+                                            <button
+                                                type="button"
+                                                onClick={() => setActiveOffice('corporate')}
+                                                aria-label="Show Corporate Office on map"
+                                                aria-pressed={activeOffice === 'corporate'}
+                                                className="w-12 h-12 bg-black text-white rounded-xl flex items-center justify-center"
+                                            >
+                                                <MapPin className="w-6 h-6" />
+                                            </button>
+                                            <h3 className="text-2xl font-bold text-black">Corporate Office</h3>
+                                        </div>
                                         <p>1st floor, Leelvathi Nagar, Mangadu, Sikkarayapuram, Chennai, Tamil Nadu 600122</p>
                                     </div>
 
@@ -74,10 +97,10 @@ export function ContactPage() {
                                                     width="100%"
                                                     height="100%"
                                                     id="gmap_canvas"
-                                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.9169835466986!2d72.8422467!3d21.1738289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04fac5c149a93%3A0xb8137fe457cf747a!2sTALMADE%20APPREALS%20PRIVATE%20LIMITED!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
+                                                    src={activeMap}
                                                     frameBorder="0"
                                                     scrolling="no"
-                                                    title="Corporate Office Map"
+                                                    title={`${activeMapLabel} office map`}
                                                     style={{ border: 0 }}
                                                     allowFullScreen
                                                     loading="lazy"
@@ -86,7 +109,7 @@ export function ContactPage() {
 
                                             {/* Map Label */}
                                             <div className="absolute top-4 left-4 bg-black text-white px-3 py-1.5 rounded-full text-xs font-medium">
-                                                Surat, Gujarat
+                                                {activeMapLabel}
                                             </div>
                                         </div>
                                     </div>
