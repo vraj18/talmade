@@ -25,11 +25,11 @@ export function ContactPage() {
     const corporateOfficeMap = "https://www.google.com/maps?q=13.0196797,80.1029455&z=16&output=embed";
     const activeMap = activeOffice === 'registered' ? registeredOfficeMap : corporateOfficeMap;
     const activeMapLabel = activeOffice === 'registered' ? 'Surat, Gujarat' : 'Chennai, Tamil Nadu';
-    const registeredOfficeAddress = '2ND FLOOR Plot-E/4-5-6, Functional Industrial Estate, Subhashchandra Road, Near Jalaram Way Bridge, Road No/8, Udhna, Surat, Gujarat 394210, India';
-    const corporateOfficeAddress = '1st floor, Leelvathi Nagar, Mangadu, Sikkarayapuram, Chennai, Tamil Nadu 600122';
+    const registeredOfficeCoordinates = '21.1738289,72.8448216';
+    const corporateOfficeCoordinates = '13.0196797,80.1029455';
 
     const openDirections = () => {
-        const destination = activeOffice === 'registered' ? registeredOfficeAddress : corporateOfficeAddress;
+        const destination = activeOffice === 'registered' ? registeredOfficeCoordinates : corporateOfficeCoordinates;
         const encodedDestination = encodeURIComponent(destination);
         const userAgent = navigator.userAgent;
         const isAppleSafari = /iPhone|iPad|iPod|Macintosh/i.test(userAgent) &&
