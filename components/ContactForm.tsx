@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { RevealOnScroll } from "./ui/RevealOnScroll";
+import { trackGaEvent } from "./GoogleAnalytics";
 import {
   Send,
   CheckCircle,
@@ -26,6 +27,11 @@ export const ContactForm: React.FC = () => {
           body: new FormData(e.currentTarget),
         }
       );
+      trackGaEvent("generate_lead", {
+        lead_source: "website_enquiry_form",
+        form_name: "enquiry_form",
+        page_path: `${window.location.pathname}${window.location.search}`,
+      });
       setSubmitted(true);
       e.currentTarget.reset();
     } catch (error) {
@@ -157,7 +163,7 @@ export const ContactForm: React.FC = () => {
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
+                  <form id="enquiry-form" name="enquiry_form" onSubmit={handleSubmit} className="space-y-6 relative z-10">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="col-span-1">
                         <label htmlFor="name" className={labelClasses}>Full Name</label>
