@@ -86,7 +86,7 @@ export function ContactPage() {
                                             </button>
                                             <h3 className="text-2xl font-bold text-black">Corporate Office</h3>
                                         </div>
-                                        <p>1st floor, Leelvathi Nagar, Mangadu, Sikkarayapuram, Chennai, Tamil Nadu 600122</p>
+                                        <p>1st floor, Leelvathi Nagar, Mangadu, Sikkarayapuram, Chennai, Tamil Nadu 600069</p>
                                     </div>
 
                                     <div className="space-y-4">

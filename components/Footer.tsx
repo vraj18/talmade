@@ -20,7 +20,7 @@ export const Footer: React.FC = () => {
                         </ul>
                         <h4 className="font-bold text-lg mt-6 mb-4">Corporate Office</h4>
                         <ul className="space-y-4 text-gray-400 text-sm">
-                            <li>1st floor, Leelvathi Nagar, Mangadu, Sikkarayapuram, Chennai, Tamil Nadu 600122</li>
+                            <li>1st floor, Leelvathi Nagar, Mangadu, Sikkarayapuram, Chennai, Tamil Nadu 600069</li>
                         </ul>
                     </div>
 
@@ -38,8 +38,8 @@ export const Footer: React.FC = () => {
                         <h4 className="font-bold text-lg mb-6">Customer Support</h4>
                         <ul className="space-y-4 text-gray-400 text-sm">
                             <li className="mb-8">
-                                <a href="mailto:Info.talmade@.com" className="hover:text-white transition-colors">
-                                    Info.talmade@.com
+                                <a href="mailto:Info@talmade.com" className="hover:text-white transition-colors">
+                                    Info@talmade.com
                                 </a>
                             </li>
                         </ul>
