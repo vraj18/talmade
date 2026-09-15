@@ -25,6 +25,23 @@ export function ContactPage() {
     const corporateOfficeMap = "https://www.google.com/maps?q=13.0196797,80.1029455&z=16&output=embed";
     const activeMap = activeOffice === 'registered' ? registeredOfficeMap : corporateOfficeMap;
     const activeMapLabel = activeOffice === 'registered' ? 'Surat, Gujarat' : 'Chennai, Tamil Nadu';
+    const registeredOfficeAddress = '2ND FLOOR Plot-E/4-5-6, Functional Industrial Estate, Subhashchandra Road, Near Jalaram Way Bridge, Road No/8, Udhna, Surat, Gujarat 394210, India';
+    const corporateOfficeAddress = '1st floor, Leelvathi Nagar, Mangadu, Sikkarayapuram, Chennai, Tamil Nadu 600122';
+
+    const openDirections = () => {
+        const destination = activeOffice === 'registered' ? registeredOfficeAddress : corporateOfficeAddress;
+        const encodedDestination = encodeURIComponent(destination);
+        const userAgent = navigator.userAgent;
+        const isAppleSafari = /iPhone|iPad|iPod|Macintosh/i.test(userAgent) &&
+            /Safari/i.test(userAgent) &&
+            !/CriOS|Chrome|Edg|OPR|FxiOS/i.test(userAgent);
+
+        const directionsUrl = isAppleSafari
+            ? `https://maps.apple.com/?daddr=${encodedDestination}&dirflg=d`
+            : `https://www.google.com/maps/dir/?api=1&destination=${encodedDestination}&travelmode=driving`;
+
+        window.open(directionsUrl, '_blank', 'noopener,noreferrer');
+    };
 
     return (
         <div className="pt-32 pb-20 bg-gray-50 min-h-screen">
@@ -92,7 +109,7 @@ export function ContactPage() {
                                     <div className="relative w-full max-w-md mx-auto">
                                         {/* Map Box with subtle shadow effect */}
                                         <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden relative">
-                                            <div className="h-[350px] w-full">
+                                            <div className="h-[350px] w-full relative">
                                                 <iframe
                                                     width="100%"
                                                     height="100%"
@@ -101,10 +118,17 @@ export function ContactPage() {
                                                     frameBorder="0"
                                                     scrolling="no"
                                                     title={`${activeMapLabel} office map`}
-                                                    style={{ border: 0 }}
+                                                    style={{ border: 0, pointerEvents: 'none' }}
                                                     allowFullScreen
                                                     loading="lazy"
                                                 ></iframe>
+                                                <button
+                                                    type="button"
+                                                    onClick={openDirections}
+                                                    aria-label={`Get directions to ${activeMapLabel} office`}
+                                                    title="Get directions"
+                                                    className="absolute inset-0 z-10 w-full h-full cursor-pointer bg-transparent"
+                                                />
                                             </div>
 
                                             {/* Map Label */}
